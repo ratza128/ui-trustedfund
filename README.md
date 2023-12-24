@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # UiTrustedfund
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.0.6.
@@ -25,3 +26,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+=======
+# ui-trustedfund
+User interface for app my trusted fund
+>>>>>>> a5057b7ffa8e5972df25cf4e07a12333b23a931e
