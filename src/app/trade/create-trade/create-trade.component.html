@@ -1,0 +1,178 @@
+<div class="flex items-center justify-center p-12">
+  <!-- Author: FormBold Team -->
+  <!-- Learn More: https://formbold.com -->
+  <div class="mx-auto w-full max-w-[650px]">
+    <form [formGroup]="formGroupTrade" (ngSubmit)="onSubmit()">
+      <!-- Parity Quantity Unit -->
+      <div class="-mx-3 flex flex-wrap">
+        <div class="w-full px-3 sm:w-1/3">
+          <div class="mb-5">
+            <label
+              for="parity"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Parity
+            </label>
+            <input
+              formControlName="parity"
+              type="text"
+              name="parity"
+              id="parity"
+              placeholder="Parity"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+
+        <div class="w-full px-3 sm:w-1/3 mb-5">
+          <label
+            for="quantity"
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Quantity
+          </label>
+          <input
+            formControlName="quantity"
+            type="number"
+            min="0"
+            step="1"
+            name="quantity"
+            id="quantity"
+            placeholder="Quantity"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+      </div>
+
+      <!-- Entry and Price on the same row -->
+      <div class="-mx-3 flex flex-wrap">
+        <!-- Entry -->
+        <div class="w-full px-3 sm:w-1/3">
+          <div class="mb-5">
+            <label
+              for="entry"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+              >Entry</label
+            >
+            <input
+              type="date"
+              formControlName="entry"
+              name="entry"
+              id="entry"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+
+        <div class="w-full px-3 sm:w-1/3">
+          <label
+            for="price"
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Price
+          </label>
+          <input
+            formControlName="price"
+            type="number"
+            name="price"
+            id="price"
+            placeholder="Price"
+            step="1"
+            min="0"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+      </div>
+
+      <!-- Exit and Exit Price on the same row -->
+      <div class="-mx-3 flex flex-wrap">
+        <!-- Entry -->
+        <div class="w-full px-3 sm:w-1/3">
+          <div class="mb-5">
+            <label
+              for="exit"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+              >Exit</label
+            >
+            <input
+              type="date"
+              formControlName="exit"
+              name="exit"
+              id="exit"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+
+        <div class="w-full px-3 sm:w-1/3">
+          <label
+            for="exitPrice"
+            class="mb-3 block text-base font-medium text-[#07074D]"
+          >
+            Exit Price
+          </label>
+          <input
+            formControlName="exitPrice"
+            type="number"
+            name="exitPrice"
+            id="exitPrice"
+            placeholder="Exit Price"
+            step="1"
+            min="0"
+            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+          />
+        </div>
+      </div>
+
+      <div class="mx-3 flex flex-wrap">
+        <div class="w-full px-3 sm:w-1/3">
+          <div class="mb-5">
+            <label
+              for="unit"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Unit(Leverage)
+            </label>
+            <input
+              formControlName="unit"
+              type="number"
+              min="0"
+              step="0.1"
+              name="unit"
+              id="unit"
+              placeholder="unit"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
+        </div>
+
+        <div class="w-full px-3 sm:w-1/3">
+          <label class="relative inline-flex items-center cursor-pointer mt-7">
+            <input
+              formControlName="checkboxControlPosition"
+              type="checkbox"
+              value=""
+              class="sr-only peer"
+              (change)="onCheckboxPositionChange()"
+            />
+            <div
+              class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+            <span
+              class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+              >{{ labelCheck }}</span
+            >
+          </label>
+        </div>
+      </div>
+
+      <div class="justify-center">
+        <button
+          class="hover:shadow-form rounded-md bg-[#6A64F1] py-3 px-8 justify-center text-center text-base font-semibold text-white outline-none"
+        >
+          Add trade
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
