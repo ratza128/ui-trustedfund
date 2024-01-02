@@ -20,11 +20,11 @@ export class CreateTradeComponent implements OnInit {
     this.currentDate = formatDate(today, 'yyyy-MM-dd', 'en');
     this.formGroupTrade = this.formBuilder.group(
       {
-        parity: ["", []],
-        quantity: ["", []],
-        unit: ["", []],
+        parity: new FormControl('option1'),
+        quantity: ["", [Validators.required]],
+        unit: ["", [Validators.required]],
         entry: [this.currentDate, [Validators.required]],
-        price: ["", []],
+        price: ["", [Validators.required]],
         exit: [this.currentDate, [Validators.required]],
         exitPrice: ["",[]],
         checkboxControlPosition: [false],
@@ -53,7 +53,7 @@ export class CreateTradeComponent implements OnInit {
 
   onSubmit(){
 
-    
+    console.log("onSubmit: Here")
     if (!this.formGroupTrade.valid) {
       Object.keys(this.formGroupTrade.controls).forEach(field => {
         const control = this.formGroupTrade.get(field);
@@ -61,6 +61,6 @@ export class CreateTradeComponent implements OnInit {
       });
       return;
     }
-    debugger
+    
   }
 }

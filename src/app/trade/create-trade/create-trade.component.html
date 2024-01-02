@@ -5,7 +5,8 @@
     <form [formGroup]="formGroupTrade" (ngSubmit)="onSubmit()">
       <!-- Parity Quantity Unit -->
       <div class="-mx-3 flex flex-wrap">
-        <div class="w-full px-3 sm:w-1/3">
+        <!-- Here we have the version with -->
+        <!-- <div class="w-full px-3 sm:w-1/3">
           <div class="mb-5">
             <label
               for="parity"
@@ -21,6 +22,27 @@
               placeholder="Parity"
               class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
             />
+          </div>
+        </div> -->
+        <div class="w-full px-3 sm:w-1/3">
+          <div class="mb-5">
+            <label
+              for="parity"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Parity
+            </label>
+            <select
+              formControlName="parity"
+              id="parity"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            >
+              <!-- Hardcoded options -->
+              <option value="option1">BTC/USDT</option>
+              <option value="option2" selected>LINK/USDT</option>
+              <option value="option3">ETH/USDT</option>
+              <!-- Add more options as needed -->
+            </select>
           </div>
         </div>
 
@@ -105,31 +127,33 @@
         </div>
 
         <div class="w-full px-3 sm:w-1/3">
-          <label
-            for="exitPrice"
-            class="mb-3 block text-base font-medium text-[#07074D]"
-          >
-            Exit Price
-          </label>
-          <input
-            formControlName="exitPrice"
-            type="number"
-            name="exitPrice"
-            id="exitPrice"
-            placeholder="Exit Price"
-            step="1"
-            min="0"
-            class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
-          />
+          <div class="mb-5">
+            <label
+              for="exitPrice"
+              class="mb-3 block text-base font-medium text-[#07074D]"
+            >
+              Exit Price
+            </label>
+            <input
+              formControlName="exitPrice"
+              type="number"
+              name="exitPrice"
+              id="exitPrice"
+              placeholder="Exit Price"
+              step="1"
+              min="0"
+              class="w-full rounded-md border border-[#e0e0e0] bg-white py-3 px-6 text-base font-medium text-[#6B7280] outline-none focus:border-[#6A64F1] focus:shadow-md"
+            />
+          </div>
         </div>
       </div>
 
-      <div class="mx-3 flex flex-wrap">
+      <div class="-mx-3 flex flex-wrap">
         <div class="w-full px-3 sm:w-1/3">
           <div class="mb-5">
             <label
               for="unit"
-              class="mb-3 block text-base font-medium text-[#07074D]"
+              class="block text-base font-medium text-[#07074D]"
             >
               Unit(Leverage)
             </label>
@@ -146,22 +170,24 @@
           </div>
         </div>
 
-        <div class="w-full px-3 sm:w-1/3">
-          <label class="relative inline-flex items-center cursor-pointer mt-7">
-            <input
-              formControlName="checkboxControlPosition"
-              type="checkbox"
-              value=""
-              class="sr-only peer"
-              (change)="onCheckboxPositionChange()"
-            />
-            <div
-              class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-            ></div>
-            <span
-              class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >{{ labelCheck }}</span
-            >
+        <div class="w-full mx-1 px-3 sm:w-1/3">
+          <label class="relative inline-flex items-center cursor-pointer mt-5">
+            <div class="mb-5">
+              <input
+                formControlName="checkboxControlPosition"
+                type="checkbox"
+                value=""
+                class="sr-only peer"
+                (change)="onCheckboxPositionChange()"
+              />
+              <div
+                class="w-14 h-7 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:start-[4px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+              ></div>
+              <span
+                class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >{{ labelCheck }}</span
+              >
+            </div>
           </label>
         </div>
       </div>
