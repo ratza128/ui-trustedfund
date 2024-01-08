@@ -2,6 +2,8 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node", "body-parser"],
     "baseUrl": "./src",
     "paths": {
       "@environment/*": ["environments/*"]
